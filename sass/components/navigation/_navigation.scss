@@ -1,0 +1,235 @@
+/* Header
+--------------------------------------------- */
+.site-header {
+	background-color: black;
+	color: $white;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	z-index: 9999;
+
+	a {
+		color: $white;
+	}
+
+	.site-branding {
+		padding: 1rem;
+		width: 120px;
+	}
+
+}
+
+@media screen and (min-width: 50em) {
+	.site-branding {
+		text-align: center;
+	}
+
+	@supports (grid-area: auto) {
+		.site-header {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			align-items: center;
+			padding: 0 1rem;
+		
+			.account-navigation {
+				text-align: right;
+				margin: 0 1rem;
+
+				p {
+					display: inline;
+					margin: 0 0.75rem 0 0;
+				}
+
+				svg {
+					fill: white;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+
+// Homepage header styles
+.page-id-27 .site-header {
+	background-color: rgba(0, 0, 0, 0.6);
+	color: $white;
+	box-shadow: none;
+
+	a {
+		color: $white;
+	}
+}
+
+.page-id-27 .site-header.inverted {
+	background-color: black;
+	transition: background-color 0.3s ease;
+}
+
+.page-id-27 .main-navigation ul {
+	background-color: rgba(0, 0, 0, 0.5);
+
+	@include mq-min($tabletLandscape) {
+		background-color: transparent;
+	}
+}
+
+.page-id-27 .site-header.inverted .main-navigation ul {
+	@include mq-max($tabletLandscape) {
+		background-color: black;
+	}
+}
+
+/* Navigation
+--------------------------------------------- */
+
+.main-navigation {
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 5.95rem;
+	right: 0;
+	z-index: 1000;
+	
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding: 1rem 0;
+		background-color: black;
+	}
+
+	li {
+		position: relative;
+		color: $white;
+		font-size: 1.2rem;
+		padding: 0.5rem 0;
+	}
+
+	li.current-menu-item > a,
+	li.current_page_item > a,
+	li:hover > a,
+	li.focus > a {
+		text-decoration: underline;
+		text-decoration-color: $white;
+	}
+
+	a {
+		display: block;
+		padding: .75rem 1.25rem;
+		text-align: center;
+		text-decoration: none;
+	}
+}
+
+.main-navigation.toggled ul {
+	display: block;
+}
+
+.menu-toggle {
+	position: absolute;
+	top: -5.75rem;
+	right: 2rem;
+	z-index: 1100;
+	display: block;
+	width: 3.75rem;
+	padding: 1rem;
+	margin: 0;
+	border: none;
+	background: transparent;
+	color: black;
+
+	svg {
+		fill: white;
+	}
+}
+
+@media screen and (min-width: $tabletLandscape) {
+	.menu-toggle {
+		display: none;
+	}
+	
+	.main-navigation {
+		width: 100%;
+		position: relative;
+		top: 0;
+		align-self: center;
+		margin-left: auto;
+
+		ul ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 100%;
+			left: -999em;
+			z-index: 99999;
+			background-color: rgb(255, 255, 255);
+			flex-direction: column;
+
+			a {
+				left: -999em;
+				top: 0;
+				width: 200px;
+				text-align: left;
+			}
+
+			li:hover > ul,
+			li.focus > ul {
+				left: 100%;
+				top: 0;
+			}
+		}
+	}
+
+	.main-navigation ul,
+	.main-navigation.toggled ul {
+		display: flex;
+		justify-content: center;
+	}
+
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li.focus > ul {
+		left: auto;
+	}
+}
+
+/* If Admin Bar is on front end */
+// .admin-bar .main-navigation {
+// 	top: calc(5rem + 46px);
+// }
+
+@media screen and (min-width: $tabletLandscape) {
+	.admin-bar .main-navigation {
+		top: 0;
+	}
+}
+
+
+@include mq-max($desktop) {
+	.cart-account{
+		display: none;
+	}
+}
+
+@media screen and (min-width: $tabletLandscape) {
+	.cart-account{
+		.cart-contents {
+			padding-right: 1.5rem;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		p:hover {
+			text-decoration: underline;
+		}
+	}
+	
+}
+
+.woocommerce-breadcrumb {
+	margin-top: 2rem;
+}

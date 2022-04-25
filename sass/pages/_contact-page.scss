@@ -1,0 +1,98 @@
+h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}   
+//Map
+.map{
+    margin-bottom: 2rem;
+}
+
+//Stores
+.stores {
+   display: grid;
+   grid-template-columns: 1fr;  
+}
+
+@include mq-min ($tabletPortrait) {
+    .stores{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+@include mq-min ($desktop) {
+    .stores{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+}
+
+.store {
+    box-shadow: 0 0px 15px 0 rgb(0 0 0 / 10%);
+    padding: 1rem;
+
+    h3 {
+        font-size: 1.2rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+}
+
+// Contact
+.contact {
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        }
+
+    input {
+        width: 100%;
+        height: 40px;
+        box-sizing: border-box;
+        padding: 2px 12px;
+        }
+    label {
+        margin-bottom: 0.5rem;
+        margin-left: 0.5rem;
+        font-family: $font-heading;
+        line-height: 1.5rem;
+        color: $black;
+        }
+    input[type=submit] {
+        background-color: black;
+		border: 1.5px solid black;
+        color: white;
+		width: 115px;
+		padding: 0.5rem 1rem;
+		margin: 0 auto;
+		margin-top: 0.5rem;
+		cursor: pointer;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: black;
+			background-color: white;
+			}       
+    }
+}
+@include mq-min ($tabletPortrait) {
+    .contact form{
+        width: 50%;
+        margin: auto;
+    }
+}
+}
+
+.contact-form {
+    margin-top: 4rem;
+}
+
+

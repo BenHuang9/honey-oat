@@ -1,0 +1,57 @@
+body {
+	background: $white; // Fallback for when there is no custom background color defined.
+	overflow: auto;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.site {
+	position: relative;
+}
+
+.site-main {
+	margin: 0 auto;
+	max-width: 90%;
+
+	@include mq-min($tabletLandscape) {
+		max-width: 80%;
+		margin-top: 10rem;
+	}
+}
+
+.site-main.front-page {
+	margin-top: 0;
+	max-width: 100%;
+}
+
+.site-main #post-14,
+.site-main #post-12,
+.site-main #post-15 {
+	min-height: 70vh;
+}
+
+.site-main #post-13 {
+	h2 {
+		text-align: left;
+	}
+}
+
+@include mq-max($tabletLandscape) {
+	.header-placeholder{
+		width: 100%;
+		height: 110px;
+	}
+	.page-id-27 .header-placeholder{
+		display: none;
+	}
+}
+
+.tax-product_cat .site-main{
+	min-height: 70vh;
+}
+
+.soh_alert_notification_popup_widget {
+	left: 10px;
+}

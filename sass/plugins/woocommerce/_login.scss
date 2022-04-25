@@ -1,0 +1,75 @@
+#customer_login {
+    display: flex;
+    @include mq-max($tabletPortrait) {
+        flex-direction: column;
+    }
+
+    .col-1 {
+        flex: 0.5;
+        h2.login-title {
+            text-align: start;
+        }
+
+        .woocommerce-form-row {
+            display: flex;
+            flex-direction: column;
+            
+            input {
+                width: 60%;
+            }
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            
+            .button {
+                width: 80px;
+                height: 35px;
+                cursor: pointer;
+                text-align: center;
+                vertical-align: center;
+                background-color: $black;
+                color: $white;
+                border: 1.5px solid $black;
+                border-radius: 0;
+                &:hover {
+                    color: $black;
+                    background-color: $white;
+                    border: 1.5px solid $black;
+                }
+            }
+        }
+
+    }
+
+    .col-2 {
+        flex: 0.5;
+        h2.login-title {
+            text-align: start;
+        }
+
+        .woocommerce-form-row:not(:last-child) {
+            display: flex;
+            flex-direction: column;
+
+            input {
+                width: 60%;
+            }
+        }
+        .woocommerce-form-row:last-child {
+            button {
+                background-color: $black;
+                color: $white;
+                border: 1.5px solid $black;
+                border-radius: 0;
+                cursor: pointer;
+                &:hover {
+                    color: $black;
+                    background-color: $white;
+                    border: 1.5px solid $black;
+                }
+            }
+        }
+    }
+}

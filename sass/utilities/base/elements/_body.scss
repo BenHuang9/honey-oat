@@ -1,0 +1,12 @@
+body {
+	background: $white; // Fallback for when there is no custom background color defined.
+}
+
+main {
+	margin: 0 auto;
+	max-width: 80%;
+
+	@include mq-max($tabletPortrait) {
+		max-width: 90%;
+	}
+}

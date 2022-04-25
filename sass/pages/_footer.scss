@@ -1,0 +1,114 @@
+.site-footer{
+    background-color: black;
+    text-align: center;
+    position: relative;
+    .footer-menus{
+        background-color: black;
+        .footer-navigation{
+            background-color: black;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            .menu-footer-container ul{
+                margin: 0;
+                padding: 0;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                li.current-menu-item > a,
+                li.current_page_item > a,
+                li:hover > a,
+                li.focus > a {
+                    text-decoration: underline;
+                    text-decoration-color: $white;
+                }
+                
+                li{
+                    border: 1px solid black;
+                    font-size: $font-size-reg;
+                    a{
+                        padding: 1rem 0;
+                        display: block;
+                        color: white;
+                    }
+                }
+                }
+            }
+        }
+}
+
+@include mq-min ( $phoneLandscape) {
+    .site-footer{
+        .footer-menus .footer-navigation .menu-footer-container ul li a{
+            font-size: 1.2rem;
+        }
+    }
+}  
+                 
+.site-footer{
+    margin-top: 2rem;
+    
+    .site-info{
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-bottom: 3.5rem;
+
+        a {
+            color: $white;
+            text-decoration: underline;
+        }
+    }
+    .social-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .menu-social-container .menu{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            li{
+                padding-right: 1rem;
+                svg {
+                    fill: $white;
+                }
+            }
+        }
+    }
+}
+
+
+@include mq-min ( $phoneLandscape) {
+    .site-footer{
+        .site-info{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            
+            p{
+            grid-column: 2;
+            margin: 0;
+            }
+
+        }
+    }
+}
+@include mq-min ( $desktop) {
+    .site-footer{
+        .footer-menus{
+            display: none;
+        }
+        .site-info{
+            margin: 0;
+        }
+        .social-navigation {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 2rem;
+        }
+    }
+}

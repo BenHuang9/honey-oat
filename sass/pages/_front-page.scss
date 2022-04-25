@@ -1,0 +1,309 @@
+.home-banner {
+    position: relative;
+
+    img.size-full {
+        width: 100vw;
+        height: 700px;
+        object-fit: cover;
+        filter: brightness(0.5);
+    }
+
+    .home-cta {
+        position: absolute;
+        top: 37%;
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2, h3 {
+            text-transform: uppercase;
+            color: red;
+        }
+
+        h2 {
+            margin: 0.5rem 0;
+            text-align: center;
+
+            @include mq-max($tabletLandscape) {
+                font-size: 1.3rem;
+                padding-top: 1rem;
+            }
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+        }
+
+        .order-online {
+            margin: 1rem;
+            padding: 0.5rem 1rem;
+            border: 1.5px solid white;
+
+            h3 {
+                margin: 0 auto;
+                font-size: 1rem;
+
+                @include mq-min($tabletLandscape) {
+                    font-size: 1.2rem;
+                }
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: rgba(255, 255, 255, 0.4);
+
+                h3 {
+                    color: rgba(0, 0, 0, 0.75);
+                }
+            }
+
+        }
+    }
+}
+
+.home-extra-info {
+    @include mq-min($tabletLandscape) {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    h4 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: $burnt-sienna;
+    }
+
+    article {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+
+        @include mq-min($tabletLandscape) {
+            width: 25%;
+        }
+    }
+}
+
+// Parallax Styles
+.home-parallax {
+    position: relative;
+}
+
+.parallax-top,
+.parallax-bottom {
+    h3 {
+        color: white;
+    }
+
+    img {
+        height: 300px;
+        display: block;
+        object-fit: cover;
+    }
+
+    article {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        color: white;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        @include mq-max($tabletLandscape) {
+            top: 40px;
+        }
+
+        a p {
+            width: 140px;
+            color: white;
+            border: 1.5px solid white;
+            padding: 0.5rem 1rem;
+            margin: 0 auto;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: rgba(255, 255, 255, 0.4);
+                color: rgba(0, 0, 0, 0.75); 
+            }
+        }
+    }
+}
+
+.parallax-top img {
+    filter: brightness(60%);
+}
+
+.parallax-bottom {
+    article {
+        top: 150px;
+        background-color: rgba(0, 0, 0, 0.75);
+        width: 55%;
+        padding-bottom: 1rem;
+
+        @include mq-max($tabletLandscape) {
+            top: 60px;
+            p:last-child {
+                display: none;
+            }
+        }
+    }
+}
+
+.home-parallax-background {
+    background-image: url("./images/background-image-home-parallax.jpeg");
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+.home-h2,
+.home-about h2,
+.home-testimonials h2 {
+    text-align: center;
+    //text-transform: uppercase;
+    padding-top: 1rem;;
+}
+
+.with-margin {
+    width: 90%;
+    margin: 0 auto;
+
+    @include mq-min($tabletLandscape) {
+        width: 80%;
+    }
+}
+
+.home-promotions {
+    margin-top: 3rem;
+
+    .home-h2 {
+        margin-bottom: 1rem;
+    }
+
+    .promotion-items {
+        padding-bottom: 2rem;
+
+        @include mq-min($tabletLandscape) {
+            display: flex;
+            justify-content: space-around;        
+        }
+    
+        article {
+            @include mq-min($tabletLandscape) {
+                display: flex;
+                flex-direction: column;            
+                width: 30%;
+            }
+    
+            h3 {
+                margin-bottom: 1rem;
+            }
+        }
+    
+        img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+    }
+
+}
+
+.home-popular{
+    margin-bottom: 3rem;
+
+    .products {
+        .quick_view{
+            background-color: $black;
+            color: $white;
+            width: 115px;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem auto;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            text-align: center;
+            order: 5;
+
+            grid-column: 3/4;
+            grid-row: 1/3;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $black;
+                background-color: $white;
+                border: 1px solid $black;
+            }
+        }
+
+        @include mq-min($tabletLandscape){
+            display: flex;
+            justify-content: space-evenly;
+
+            .product {
+                display: flex;
+                width: 30%;
+
+                p {
+                    flex-grow: 2;
+                }
+            }
+        }
+    }
+}
+
+.home-about {
+    background-image: url("./images/background-image-home-about.jpg");
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    padding-top: 3.5rem;
+    overflow: auto;
+
+    @include mq-min($tabletLandscape) {
+        height: 400px;
+        padding-top: 5.5rem;
+    }
+
+    h2,
+    p {
+        width: 80%;
+        margin: 0 auto;
+        color: white;
+
+        @include mq-min($tabletLandscape) {
+            width: 70%;
+        }
+    }
+
+    p {
+        margin-top: 2rem;
+    }
+}
+
+.home-testimonials {
+    margin-top: 3rem;
+
+    .wp-block-quote {
+        text-align: right;
+
+        p {
+            text-align: left;
+        }
+    }
+}

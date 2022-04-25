@@ -1,0 +1,13 @@
+@import "variables/colors";
+@import "variables/typography";
+@import "mixins/mixins";
+
+$desktop: 1250px;
+$tabletLandscape: 800px;
+$tabletPortrait: 700px;
+$phoneLandscape: 500px;
+$phonePortrait: 320px;
+
+$font-size-reg: 1rem;
+$font-size-med: 1.5rem;
+$font-size-lrg: 2rem;

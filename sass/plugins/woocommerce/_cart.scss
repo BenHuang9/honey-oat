@@ -1,0 +1,300 @@
+.woocommerce-cart {
+    .woocommerce {
+        .woocommerce-cart-container {
+            @include mq-min($tabletPortrait) {
+                display: flex;
+            }
+
+            .woocommerce-cart-wrapper {
+                background-color: #F0F0F1;
+
+                @include mq-min($tabletPortrait) {
+                    flex: 0.6;
+                }
+
+                h2 {
+                    text-align: center;
+                }
+
+                .woocommerce-cart-form {
+
+                    table {
+                        display: block;
+                        margin: 0 10px;
+
+                        tbody {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            place-items: center;
+                            grid-gap: 10px;
+
+                            @include mq-min($tabletLandscape) {
+                                grid-template-columns: 1fr 1fr;
+                            }
+
+
+                            .cart_item {
+                                background-color: $white;
+                                width: 300px;
+                                display: block;
+
+                                .product-remove,
+                                .product-thumbnail,
+                                .product-name,
+                                .product-quantity,
+                                .product-subtotal {
+                                    display: block;
+                                    text-align: left;
+                                }
+
+
+                                & td.product-thumbnail::before {
+                                    display: none;
+                                }
+
+                                & td.product-quantity::before {
+                                    display: none;
+                                }
+
+                                & td.product-subtotal::before {
+                                    display: none;
+                                }
+
+                                & td.product-name::before {
+                                    display: none;
+                                }
+
+                                .product-name,
+                                .product-subtotal,
+                                .product-quantity,
+                                .product-remove {
+                                    padding-left: 20px;
+                                }
+
+                                .product-price {
+                                    display: none;
+                                }
+
+                                .variation {
+                                    display: none;
+                                }
+
+                                .product-thumbnail {
+                                    width: 280px;
+                                    height: 200px;
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                        padding: 20px 0 0 20px;
+                                    }
+                                }
+
+                                .product-name-total-wrapper {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    padding: 0 20px;
+
+                                    .product-subtotal {
+                                        margin-top: 0.5rem;
+
+                                        span {
+                                            bdi {
+                                                font-size: 20px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .product-remove {
+                                    padding: 0;
+                                    margin: 1rem;
+                                    margin-bottom: 1.5rem;
+
+                                    a {
+                                        text-decoration: none;
+                                        padding: 5px;
+                                        background-color: $black;
+                                        color: $white;
+                                        border: 1.5px solid $black;
+                                        border-radius: 0;
+                                        cursor: pointer;
+
+                                        &:hover {
+                                            color: $black;
+                                            background-color: $white;
+                                            border: 1.5px solid $black;
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+
+                        thead {
+                            display: none;
+
+                            tr {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .button-wrapper {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        margin: 10px 0;
+
+                        button {
+                            margin-top: 10px;
+                            background-color: $black;
+                            color: $white;
+                            border-radius: 0;
+                            border: 1.5px solid $black;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: $black;
+                                background-color: $white;
+                                border: 1.5px solid $black;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .cart-collaterals {
+                @include mq-min($tabletPortrait) {
+                    flex: 0.4;
+                    margin-left: 10px;
+                }
+
+                .cart_totals {
+                    border: 1px solid $black;
+                    padding: 0 10px 10px 10px;
+
+                    @include mq-max($tabletPortrait) {
+                        margin: 10px 0;
+                    }
+
+                    h2 {
+                        text-align: center;
+
+                    }
+
+                    .shop_table {
+                        display: block;
+
+                        tbody {
+                            display: block;
+
+                            .cart-subtotal,
+                            .order-total,
+                            .tax-rate {
+                                display: flex;
+                                justify-content: space-between;
+                            }
+
+                            .shipping {
+                                display: flex;
+                                justify-content: space-between;
+
+                                th {
+                                    display: block;
+                                }
+
+                                td {
+                                    &::before {
+                                        display: none;
+                                    }
+
+                                    ul {
+                                        padding-left: 0;
+                                        margin-left: 0;
+
+                                        li {
+                                            list-style: none;
+                                            display: flex;
+                                            justify-content: end;
+                                        }
+                                    }
+
+                                    p {
+                                        text-align: end;
+                                    }
+
+                                    form {
+                                        a {
+                                            padding-left: 50px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .cart-subtotal {
+                                th {
+                                    display: block;
+                                }
+
+                                td {
+                                    &::before {
+                                        display: none;
+                                    }
+                                }
+                            }
+
+                            .tax-rate {
+                                th {
+                                    display: block;
+                                }
+
+                                td {
+                                    &::before {
+                                        display: none;
+                                    }
+                                }
+                            }
+
+                            .order-total {
+                                th {
+                                    display: block;
+                                }
+
+                                td {
+                                    &::before {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .wc-proceed-to-checkout {
+                        padding-top: 20px;
+                        display: grid;
+                        place-items: center;
+
+                        a {
+                            background-color: $black;
+                            padding: 10px;
+                            text-decoration: none;
+                            color: $white;
+                            border: 1.5px solid $black;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: $black;
+                                background-color: $white;
+                                border: 1.5px solid $black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

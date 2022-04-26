@@ -31,7 +31,7 @@ gulp.task('watch', function () {
 	// BrowserSync ***UPDATE PROXY & PORT***
 	browserSync.init({
 		open: 'external',
-		proxy: 'http://localhost:8888/wordpress-honey-oat',
+		proxy: 'http://localhost:8888/wordpress/honeyOat/',
 		port: 8888
 	});
 	gulp.watch(root + '**/*').on('change', browserSync.reload);

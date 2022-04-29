@@ -6,26 +6,30 @@
 .food-category{
 	display: flex;
 	overflow-y: auto;
-	justify-content: space-evenly;
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	gap: 10px;
 
+	@include mq-min($desktop){
+		justify-content: space-evenly;
+	}
 	@include mq-max($desktop) {	
+		 
 		p {
 			padding: 0 0.5rem;
 			font-weight: 500;
+			width: 110px;
 		}
 	}
 
 	img{
 		box-shadow: 0 20px 20px 0 rgb(0 0 0 / 20%);
-		width: 80px;	
-		height: auto;
-
-		@include mq-max($desktop) {
-			display: none;
-		}
+		width: 100px;	
+		height: 100px;
+		object-fit: contain;
+		border-radius: 50%;
+		border: 1px solid;
 	}
 	
 }
@@ -40,9 +44,10 @@
 	cursor: pointer;
 	grid-row: 5;
 	text-align: center;
-	@include mq-max($tabletLandscape){
-		display: none;
-	}
+	order: 2;
+	// @include mq-max($tabletLandscape){
+	// 	display: none;
+	// }
 
 	&:hover,
 	&:focus,
@@ -55,12 +60,12 @@
 
 section h2{
 	margin: 2rem 0;
-	padding-top: 1rem;
+	padding-top: 6rem;
 	font-size: $font-size-lrg;
 
-	@include mq-max($desktop) {
-		padding-top: 6rem;
-	}
+	// @include mq-max($desktop) {
+	// 	padding-top: 6rem;
+	// }
 }
 
 section ul,
@@ -139,7 +144,6 @@ section ul,
 				grid-row: 3/4;
 				grid-column: 2/4;
 				padding-top: 0.5rem;
-				padding-bottom: 1rem;
 			}
 		}
 	}
@@ -150,6 +154,20 @@ section ul,
 	}
 	
 }
+
+@include mq-min($tabletLandscape){
+	section ul{
+		.product{
+			h2{
+				font-size: 1.5rem;
+			}
+			.price,
+			p{
+				font-size: 1.3rem;
+			}
+		}
+	}
+}
 @include mq-min ( $desktop) {
 	section ul,
 	.products{
@@ -159,65 +177,48 @@ section ul,
 		margin: 0 auto;
 		padding: 0;
 		column-gap: 30px;
-		
+			.product{
+				h2{
+					font-size: 1.2rem;
+				}
+				.price,
+				p{
+					font-size: 1rem;
+				}
+			}
 	}
 
-}
-
-@include mq-min ( $phoneLandscape) {
-
-	.food-category{
-		grid-template-rows: repeat(2,11rem);
-		grid-template-columns: repeat(4,8rem);
-
-		li a img{
-			width: 110px;	
-		}
-
-	}
-}
-
-@include mq-min ( $tabletLandscape) {
-	.food-category{
-		li a img{
-			width: 150px;	
-		}
-	}
-}
-@include mq-min ( $desktop) {
-	.food-category{
-		display: flex;
-		li a img{
-			width: 110px;	
-		}
-	}
 }
 
 .scroll-top {
     border: none;
     padding: 1rem;
     position: fixed;
-    bottom: 12.5rem;
+    bottom: 13.5rem;
     right: 1rem;
     cursor: pointer;
     transition: all ease 0.3s;
     opacity: 0;
+	z-index: 999;
 	border-radius: 50%;
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: rgba(141, 141, 141, 0.442);
 
 	svg{
-		fill: white;
+		fill:black;
 	}
-}
-@include mq-min ( $phoneLandscape) {
-	.scroll-top {
-		bottom: 9rem;
-	}
-}
-@include mq-min ( $desktop) {
-	.scroll-top {
-		bottom: 6rem;
-	}
-}
 
+	&:hover{
+		background-color: rgb(141, 141, 141);
+	}
+}
+@include mq-min( $phoneLandscape){
+	.scroll-top {
+		bottom: 10.5rem;
+		}
+}
+@include mq-min($desktop){
+	.scroll-top {
+	bottom: 7.5rem;
+	}
+}
 

@@ -76,11 +76,11 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	width: 90%;
+	// width: 90%;
 	margin: 0 auto;
 
 	@include mq-min($desktop) {
-		width: 50%;
+		// width: 50%;
 	}
 }
 
@@ -88,7 +88,7 @@
 .product_cat-sandwiches .cart {
 	align-items: flex-end;
 	@include mq-min($desktop) {
-		width: 90%;
+		// width: 90%;
 		.wc-pao-addons-container{
 			margin: 0 auto;
 		}
@@ -139,7 +139,13 @@
 			border: 1.5px solid $black;
 		}
 	}
-
+	#ppc-button .paypal-buttons{
+			width: 200px;
+			display: flex;
+			margin: 0 auto;
+			margin-right: 0;
+			margin-top: 0.5rem;
+	}
 }
 
 .product_cat-combo{

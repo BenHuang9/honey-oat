@@ -10,6 +10,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
+            z-index: 999;
             .menu-footer-container ul{
                 margin: 0;
                 padding: 0;
@@ -86,10 +87,9 @@
     .site-footer{
         .site-info{
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            
+            grid-template-columns: 1fr 1fr;
+            text-align: center;
             p{
-            grid-column: 2;
             margin: 0;
             }
 
@@ -107,7 +107,6 @@
         .social-navigation {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
             margin-right: 2rem;
         }
     }

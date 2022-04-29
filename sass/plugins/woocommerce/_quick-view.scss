@@ -2,25 +2,36 @@
     .product_cat-sandwiches .summary-content{
         .cart .wc-pao-addon .wc-pao-addon-wrap label{
             display: block;
+            height: 100%;
         }
         .wc-pao-addons-container .wc-pao-addon-container{
             margin: 0;
         }
     }
+    .product .summary{
+        height: 100%;
+    }
     .images{
         width: 100%;
         img{
             width: 100%;
-            height: 400px;
+            height: 300px;
             object-fit: contain;
         }
     }
+    
     .summary{
         width: 100%;
+        padding: 0.5rem;
         .summary-content{
+            padding: 0 2rem;
             .cart{
                 .wc-pao-addons-container{
                     display: block;
+                    margin-top: 0;
+                    .wc-pao-addon-container{
+                        margin-bottom: 0.5rem;
+                    }
                 }
                 .single_variation{
                     display: none;
@@ -48,6 +59,9 @@
                     text-align: center;
                 }
             }
+            .woocommerce-product-details__short-description{
+                margin: 0;
+            }
         }
     }
     
@@ -56,7 +70,8 @@
 @include mq-min ( $tabletLandscape) {
     #wcqv_contend{
         .images{
-            width: 50%;
+            width: 40%;
+            padding-top: 2rem;
             img{
                 width: 100%;
                 height: 450px;
@@ -66,21 +81,23 @@
 
         .summary{
             float: left;
-            width: 50%;
+            width: 60%;
             font-size: 15px;
             margin: 0;
             height: 100%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 1rem 1rem 0.5rem 2rem;
+            text-align: center;
+            padding:5rem 2rem 0 1rem;
             .summary-content{
+                padding: 0;
                 width: 100%;
                 .variations_form .single_variation_wrap {
                     display: flex;
                     align-items:stretch;
                     width: 100%;
                 }
+
             }
         }
 
@@ -96,7 +113,7 @@
         .cart{
             margin: 0;
             width: 100%;
-            
+            align-items: flex-end;
         }
         .value{
             display: flex;

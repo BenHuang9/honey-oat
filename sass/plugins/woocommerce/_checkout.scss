@@ -30,6 +30,22 @@
 					p {
 						display: block;
 					}
+					.woocommerce-shipping-fields{
+						.woocommerce-form__label {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+
+							input{
+								order: 1;
+								width: 1rem;
+							}
+
+							span{
+								padding-right: 1rem;
+							}
+						}
+					}
 					.shipping_address {
 						.woocommerce-input-wrapper {
 							width: 100%;
@@ -115,8 +131,12 @@
 										li {
 											list-style: none;
 											display: flex;
-											justify-content: center;
+											justify-content: flex-end;
 											align-items: center;
+
+											label{
+												padding-left: 0.5rem;
+											}
 										}
 									}
 									p {
@@ -168,7 +188,7 @@
 						}
 					}
 
-					input {
+					#place_order {
 						display: block;
 						margin-right: auto;
 						margin-left: auto;

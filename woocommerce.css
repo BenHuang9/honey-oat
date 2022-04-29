@@ -329,7 +329,7 @@ section ul .product p,
 
 .cart {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	flex-direction: column;
 	margin: 0 auto;
 }
@@ -440,7 +440,7 @@ section ul .product p,
 }
 @media (min-width: 1250px) {
 	.woocommerce-tabs.wc-tabs-wrapper {
-		width: 50%;
+		width: 70%;
 	}
 }
 .woocommerce-tabs.wc-tabs-wrapper .wc-tabs {
@@ -553,6 +553,9 @@ section ul .product p,
 }
 #wcqv_contend .summary .summary-content {
 	padding: 0 2rem;
+}
+#wcqv_contend .summary .summary-content .cart {
+	text-align: left;
 }
 #wcqv_contend .summary .summary-content .cart .wc-pao-addons-container {
 	display: block;

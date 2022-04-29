@@ -24,7 +24,6 @@
         width: 100%;
         padding: 0.5rem;
         .summary-content{
-            padding: 0 2rem;
             .cart{
                 text-align: left;
                 .wc-pao-addons-container{
@@ -32,6 +31,10 @@
                     margin-top: 0;
                     .wc-pao-addon-container{
                         margin-bottom: 0.5rem;
+
+                        .form-row label input{
+                            width: 2rem;
+                        }
                     }
                 }
                 .single_variation{

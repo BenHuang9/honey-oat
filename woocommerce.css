@@ -551,9 +551,6 @@ section ul .product p,
 	width: 100%;
 	padding: 0.5rem;
 }
-#wcqv_contend .summary .summary-content {
-	padding: 0 2rem;
-}
 #wcqv_contend .summary .summary-content .cart {
 	text-align: left;
 }
@@ -563,6 +560,9 @@ section ul .product p,
 }
 #wcqv_contend .summary .summary-content .cart .wc-pao-addons-container .wc-pao-addon-container {
 	margin-bottom: 0.5rem;
+}
+#wcqv_contend .summary .summary-content .cart .wc-pao-addons-container .wc-pao-addon-container .form-row label input {
+	width: 2rem;
 }
 #wcqv_contend .summary .summary-content .cart .single_variation {
 	display: none;
